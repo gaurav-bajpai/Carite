@@ -149,7 +149,7 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dealership Info',
-    'weight' => '25',
+    'weight' => '5',
     'children' => array(
       0 => 'field_location',
       1 => 'field_dealer_phone',

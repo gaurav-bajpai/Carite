@@ -50,6 +50,46 @@ function deal_management_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-deal_management-field_advance'
+  $field_instances['node-deal_management-field_advance'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 52,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_advance',
+    'label' => 'Advance',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-deal_management-field_city'
   $field_instances['node-deal_management-field_city'] = array(
     'bundle' => 'deal_management',
@@ -948,6 +988,59 @@ function deal_management_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-deal_management-field_date_funded'
+  $field_instances['node-deal_management-field_date_funded'] = array(
+    'bundle' => 'deal_management',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'deal_date_format',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date_funded',
+    'label' => 'Date Funded',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-deal_management-field_date_of_birth'
   $field_instances['node-deal_management-field_date_of_birth'] = array(
     'bundle' => 'deal_management',
@@ -998,6 +1091,100 @@ function deal_management_field_default_field_instances() {
       ),
       'type' => 'date_text',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_date_received'
+  $field_instances['node-deal_management-field_date_received'] = array(
+    'bundle' => 'deal_management',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'deal_date_format',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 53,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date_received',
+    'label' => 'Date received',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_deal_status'
+  $field_instances['node-deal_management-field_deal_status'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => array(
+      0 => array(
+        'value' => 'pending ',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 51,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_deal_status',
+    'label' => 'Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
     ),
   );
 
@@ -1825,18 +2012,56 @@ function deal_management_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_state',
     'label' => 'State',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'text_textfield',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_stipulation'
+  $field_instances['node-deal_management-field_stipulation'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 50,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_stipulation',
+    'label' => 'Stipulation',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
     ),
   );
 
@@ -2043,10 +2268,13 @@ function deal_management_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Advance');
   t('CPI');
   t('City');
   t('Color');
+  t('Date Funded');
   t('Date of Birth');
+  t('Date received');
   t('Email');
   t('Employer');
   t('F. Name');
@@ -2062,6 +2290,8 @@ function deal_management_field_default_field_instances() {
   t('Sales Person');
   t('Service Contract');
   t('State');
+  t('Status');
+  t('Stipulation');
   t('Stock');
   t('Term');
   t('VIN');
