@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Stipulation feature.
+ */
+
+include_once 'stipulation.features.inc';
