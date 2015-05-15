@@ -1,0 +1,6 @@
+name = Carite Tools
+description = This module contains custom implementation of the features.
+core = 7.x
+version = 7.x-1.x
+package = Carite
+configure = admin/config/media/selfi
