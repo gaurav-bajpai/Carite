@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Function to get term name from term id
+ * @param type $tid
+ *      Term Id
+ * @return type
+ *      Term Name
+ */
+function get_term_name_from_tid($tid) {
+    $tname = db_select('taxonomy_term_data', 'td')
+            ->fields('td', array('name'))
+            ->condition('td.tid', $tid)
+            ->execute()->fetchField();
+    return $tname;
+}
