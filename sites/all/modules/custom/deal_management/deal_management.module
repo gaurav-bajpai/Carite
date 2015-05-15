@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Deal Management feature.
- */
-
-include_once 'deal_management.features.inc';
