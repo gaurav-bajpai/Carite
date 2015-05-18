@@ -6,12 +6,12 @@
  *      Count of Deal
  */
 function get_funded_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'funded');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('ds.field_deal_status_value', 'funded');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
 
 /**
@@ -20,40 +20,113 @@ function get_funded_deal_count() {
  *      Count of Deal
  */
 function get_pending_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'pending');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('ds.field_deal_status_value', 'pending');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
+
+/**
+ * @desc returns the average days to fund
+ */
+function get_avg_days_to_fund() {
+  $total_deals = get_funded_deal_count();
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_date_funded', 'df', 'df.entity_id = n.nid');
+  $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
+  $query->addExpression('SUM(date(df.field_date_funded_value) - date(dr.field_date_received_value))', 'difference');
+  $sum = $query->execute()->fetchField();
+  return ($total_deals) ? ($sum/$total_deals) : $sum;
+}
+
+/**
+ * @desc returns the total average deals on hold.
+ */
+function get_total_avg_deals_onhold() {
+  $total_deals = get_pending_deal_count();
+  $curr_date = date('H:i:s');
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
+  $query->addExpression('SUM(field_date_received_value - :current_date)', 'avg_days_onhold', array(':current_date' => $curr_date));
+  $sum = $query->execute()->fetchField();
+  return ($total_deals) ? ($sum/$total_deals) : $sum;
+}
+
+/**
+ * @desc returns the total number of funded deals
+ */
+function get_total_funded_deals() {
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->condition('ds.field_deal_status_value', 'funded');
+  $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
+  $total = $query->execute()->fetchField();
+  return $total;
+}
+
+/**
+ * @desc returns the total number of pending deals
+ */
+function get_total_pending_deals() {
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->condition('ds.field_deal_status_value', 'pending');
+  $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
+  $total = $query->execute()->fetchField();
+  return $total;
+}
+
 
 /**
  * Implements hook_block_info().
  */
 function carite_deal_summary_block_info() {
-    $blocks = array();
-    $blocks['carite_deal_summary'] = array(
-      'info' => t('Deal Summary'),
-    );
-    return $blocks;
+  $blocks = array();
+  $blocks['carite_deal_summary'] = array(
+    'info' => t('Deal Summary'),
+  );
+  return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
 function carite_deal_summary_block_view($delta = '') {
-    $block = array();
-    switch ($delta) {
-        case 'carite_deal_summary':
-            $block['subject'] = '';
-            $block['content'] = _carite_deal_summary_CONTENT();
-            break;
-    }
-    return $block;
+  $block = array();
+  switch ($delta) {
+    case 'carite_deal_summary':
+      $block['subject'] = '';
+      $block['content'] = _carite_deal_summary_CONTENT();
+    break;
+  }
+  return $block;
 }
 
 function _carite_deal_summary_CONTENT() {
-    $output = t('Hello world');
-    return $output;
+  $output = '<table>';
+  $output .= '<tr>';
+  $output .= '<th>FUNDED</th>';
+  $output .= '<td>' . get_funded_deal_count() . '</td>';
+  $output .= '<th>AVG DAYS TO FUND</th>';
+  $output .= '<td>' . get_avg_days_to_fund() . '</td>';
+  $output .= '<th>TOTAL FUNDED</th>';
+  $output .= '<td>' . get_total_funded_deals() . '</td>';
+  $output .= '</tr>';
+
+
+  $output .= '<tr>';
+  $output .= '<th>PENDING</th>';
+  $output .= '<td>' . get_pending_deal_count() . '</td>';
+  $output .= '<th>AVG DAYS ON HOLD</th>';
+  $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
+  $output .= '<th>TOTAL PENDING</th>';
+  $output .= '<td>' . get_total_pending_deals() . '</td>';
+  $output .= '</tr>';
+  $output .= '<table>';
+  return $output;
 }
