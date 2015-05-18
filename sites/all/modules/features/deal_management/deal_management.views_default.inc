@@ -22,10 +22,14 @@ function deal_management_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Deal Management Summary';
+  $handler->display->display_options['title'] = 'Stipulation';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    4 => '4',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -34,32 +38,22 @@ function deal_management_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'field_color' => 'field_color',
-    'field_co_lessee_email' => 'field_co_lessee_email',
     'field_f_name' => 'field_f_name',
     'field_l_name' => 'field_l_name',
+    'field_year' => 'field_year',
     'field_make' => 'field_make',
     'field_model' => 'field_model',
-    'field_co_lessee_phone' => 'field_co_lessee_phone',
-    'field_year' => 'field_year',
+    'field_color' => 'field_color',
+    'field_email' => 'field_email',
+    'field_phone' => 'field_phone',
+    'field_advance' => 'field_advance',
+    'field_deal_status' => 'field_deal_status',
+    'field_date_received' => 'field_date_received',
+    'field_date_funded' => 'field_date_funded',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_color' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_co_lessee_email' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -80,6 +74,13 @@ function deal_management_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_year' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_make' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -94,14 +95,49 @@ function deal_management_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_co_lessee_phone' => array(
+    'field_color' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_year' => array(
+    'field_email' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_phone' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_advance' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_deal_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_received' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_funded' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -123,15 +159,6 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['title']['ui_name'] = 'Unique Deal ID';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Color */
-  $handler->display->display_options['fields']['field_color']['id'] = 'field_color';
-  $handler->display->display_options['fields']['field_color']['table'] = 'field_data_field_color';
-  $handler->display->display_options['fields']['field_color']['field'] = 'field_color';
-  /* Field: Lessee Email */
-  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
-  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['ui_name'] = 'Lessee Email';
   /* Field: Lessee First Name */
   $handler->display->display_options['fields']['field_f_name']['id'] = 'field_f_name';
   $handler->display->display_options['fields']['field_f_name']['table'] = 'field_data_field_f_name';
@@ -142,6 +169,10 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_l_name']['table'] = 'field_data_field_l_name';
   $handler->display->display_options['fields']['field_l_name']['field'] = 'field_l_name';
   $handler->display->display_options['fields']['field_l_name']['ui_name'] = 'Lessee Last Name';
+  /* Field: Content: Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
   /* Field: Car Company */
   $handler->display->display_options['fields']['field_make']['id'] = 'field_make';
   $handler->display->display_options['fields']['field_make']['table'] = 'field_data_field_make';
@@ -151,15 +182,50 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_model']['id'] = 'field_model';
   $handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
   $handler->display->display_options['fields']['field_model']['field'] = 'field_model';
+  /* Field: Content: Color */
+  $handler->display->display_options['fields']['field_color']['id'] = 'field_color';
+  $handler->display->display_options['fields']['field_color']['table'] = 'field_data_field_color';
+  $handler->display->display_options['fields']['field_color']['field'] = 'field_color';
+  /* Field: Lessee Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['ui_name'] = 'Lessee Email';
   /* Field: Lessee Phone Number */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
   $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
   $handler->display->display_options['fields']['field_phone']['ui_name'] = 'Lessee Phone Number';
-  /* Field: Content: Year */
-  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
-  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
-  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  /* Field: Content: Advance */
+  $handler->display->display_options['fields']['field_advance']['id'] = 'field_advance';
+  $handler->display->display_options['fields']['field_advance']['table'] = 'field_data_field_advance';
+  $handler->display->display_options['fields']['field_advance']['field'] = 'field_advance';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_deal_status']['id'] = 'field_deal_status';
+  $handler->display->display_options['fields']['field_deal_status']['table'] = 'field_data_field_deal_status';
+  $handler->display->display_options['fields']['field_deal_status']['field'] = 'field_deal_status';
+  /* Field: Content: Date received */
+  $handler->display->display_options['fields']['field_date_received']['id'] = 'field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['table'] = 'field_data_field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['field'] = 'field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['settings'] = array(
+    'format_type' => 'deal_date_format',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Date Funded */
+  $handler->display->display_options['fields']['field_date_funded']['id'] = 'field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['table'] = 'field_data_field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['field'] = 'field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['settings'] = array(
+    'format_type' => 'deal_date_format',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -217,9 +283,230 @@ function deal_management_views_default_views() {
     'field_year' => 'field_year',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Deal Management Summary */
+  $handler = $view->new_display('page', 'Deal Management Summary', 'deal_management_summary');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_f_name' => 'field_f_name',
+    'field_l_name' => 'field_l_name',
+    'field_year' => 'field_year',
+    'field_make' => 'field_make',
+    'field_model' => 'field_model',
+    'field_color' => 'field_color',
+    'field_email' => 'field_email',
+    'field_phone' => 'field_phone',
+    'field_advance' => 'field_advance',
+    'field_deal_status' => 'field_deal_status',
+    'field_date_received' => 'field_date_received',
+    'field_date_funded' => 'field_date_funded',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_f_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_l_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_year' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_make' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_model' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_color' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_email' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_phone' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_advance' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_deal_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_received' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date_funded' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'deal-management-summary';
+
+  /* Display: Stipulations */
+  $handler = $view->new_display('block', 'Stipulations', 'stipulations');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Stipulations';
+  $handler->display->display_options['display_description'] = 'This displays all stipulations related to a node.';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_status_editable' => 'field_status_editable',
+    'description' => 'description',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_status_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'description' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['save_messages'] = 'none';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Refer Deal (field_refer_deal) */
+  $handler->display->display_options['relationships']['field_refer_deal_nid']['id'] = 'field_refer_deal_nid';
+  $handler->display->display_options['relationships']['field_refer_deal_nid']['table'] = 'field_data_field_refer_deal';
+  $handler->display->display_options['relationships']['field_refer_deal_nid']['field'] = 'field_refer_deal_nid';
+  $handler->display->display_options['relationships']['field_refer_deal_nid']['required'] = TRUE;
+  $handler->display->display_options['relationships']['field_refer_deal_nid']['delta'] = '-1';
+  /* Relationship: Content: Refer Stipulation (field_refer_stipulation) */
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['id'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['table'] = 'field_data_field_refer_stipulation';
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['field'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Stipulation';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Status (editable) */
+  $handler->display->display_options['fields']['field_status_editable']['id'] = 'field_status_editable';
+  $handler->display->display_options['fields']['field_status_editable']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status_editable']['field'] = 'field_status_editable';
+  $handler->display->display_options['fields']['field_status_editable']['label'] = 'Status';
+  $handler->display->display_options['fields']['field_status_editable']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_status_editable']['suppress_label'] = 0;
+  $handler->display->display_options['fields']['field_status_editable']['suppress_description'] = 0;
+  /* Field: Taxonomy term: Term description */
+  $handler->display->display_options['fields']['description']['id'] = 'description';
+  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['description']['field'] = 'description';
+  $handler->display->display_options['fields']['description']['relationship'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['fields']['description']['label'] = 'Description';
+  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_refer_deal_nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stipulation_status' => 'stipulation_status',
+  );
+  $handler->display->display_options['block_description'] = 'Stipulations Details';
   $export['deal_management_summary'] = $view;
 
   return $export;

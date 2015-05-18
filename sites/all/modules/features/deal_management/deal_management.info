@@ -4,6 +4,7 @@ package = Carite
 version = 7.x-1.0
 project = deal_management
 dependencies[] = date
+dependencies[] = editableviews
 dependencies[] = email
 dependencies[] = features
 dependencies[] = field_group
