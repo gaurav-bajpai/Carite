@@ -6,12 +6,12 @@
  *      Count of Deal
  */
 function get_funded_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'funded');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('ds.field_deal_status_value', 'funded');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
 
 /**
@@ -20,40 +20,49 @@ function get_funded_deal_count() {
  *      Count of Deal
  */
 function get_pending_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'pending');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('ds.field_deal_status_value', 'pending');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
 
 /**
  * Implements hook_block_info().
  */
 function carite_deal_summary_block_info() {
-    $blocks = array();
-    $blocks['carite_deal_summary'] = array(
-      'info' => t('Deal Summary'),
-    );
-    return $blocks;
+  $blocks = array();
+  $blocks['carite_deal_summary'] = array(
+    'info' => t('Deal Summary'),
+  );
+  return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
 function carite_deal_summary_block_view($delta = '') {
-    $block = array();
-    switch ($delta) {
-        case 'carite_deal_summary':
-            $block['subject'] = '';
-            $block['content'] = _carite_deal_summary_CONTENT();
-            break;
-    }
-    return $block;
+  $block = array();
+  switch ($delta) {
+    case 'carite_deal_summary':
+      $block['subject'] = '';
+      $block['content'] = _carite_deal_summary_CONTENT();
+    break;
+  }
+  return $block;
 }
 
 function _carite_deal_summary_CONTENT() {
-    $output = t('Hello world');
-    return $output;
+  $output = '<table>';
+  $output .= '<tr>';
+  $output .= '<th>FUNDED</th>';
+  $output .= '<td>' . get_funded_deal_count() . '</td>';
+  $output .= '</tr>';
+  $output .= '<tr>';
+  $output .= '<th>PENDING</th>';
+  $output .= '<td>' . get_pending_deal_count() . '</td>';
+  $output .= '</tr>';
+  $output .= '<table>';
+  return $output;
 }
