@@ -56,3 +56,16 @@ function carite_tools_create_stipulation($deal_node) {
     }
   } catch (Exception $e) {}
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function carite_tools_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'deal_management_node_form' && isset($form['#node']->nid)) {
+    $form['stipulation_view'] = array(
+      '#type' => 'markup',
+      '#markup' => views_embed_view('deal_management_summary','stipulations', $form['#node']->nid),
+      '#weight' => 999,
+    );
+  }
+}
