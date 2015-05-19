@@ -399,6 +399,88 @@ function deal_management_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Unique Deal ID */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Unique Deal ID';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Lessee First Name */
+  $handler->display->display_options['fields']['field_f_name']['id'] = 'field_f_name';
+  $handler->display->display_options['fields']['field_f_name']['table'] = 'field_data_field_f_name';
+  $handler->display->display_options['fields']['field_f_name']['field'] = 'field_f_name';
+  $handler->display->display_options['fields']['field_f_name']['ui_name'] = 'Lessee First Name';
+  /* Field: Lessee Last Name */
+  $handler->display->display_options['fields']['field_l_name']['id'] = 'field_l_name';
+  $handler->display->display_options['fields']['field_l_name']['table'] = 'field_data_field_l_name';
+  $handler->display->display_options['fields']['field_l_name']['field'] = 'field_l_name';
+  $handler->display->display_options['fields']['field_l_name']['ui_name'] = 'Lessee Last Name';
+  /* Field: Content: Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  /* Field: Car Company */
+  $handler->display->display_options['fields']['field_make']['id'] = 'field_make';
+  $handler->display->display_options['fields']['field_make']['table'] = 'field_data_field_make';
+  $handler->display->display_options['fields']['field_make']['field'] = 'field_make';
+  $handler->display->display_options['fields']['field_make']['ui_name'] = 'Car Company';
+  /* Field: Content: Model */
+  $handler->display->display_options['fields']['field_model']['id'] = 'field_model';
+  $handler->display->display_options['fields']['field_model']['table'] = 'field_data_field_model';
+  $handler->display->display_options['fields']['field_model']['field'] = 'field_model';
+  /* Field: Content: Color */
+  $handler->display->display_options['fields']['field_color']['id'] = 'field_color';
+  $handler->display->display_options['fields']['field_color']['table'] = 'field_data_field_color';
+  $handler->display->display_options['fields']['field_color']['field'] = 'field_color';
+  /* Field: Lessee Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['ui_name'] = 'Lessee Email';
+  /* Field: Lessee Phone Number */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['ui_name'] = 'Lessee Phone Number';
+  /* Field: Content: Advance */
+  $handler->display->display_options['fields']['field_advance']['id'] = 'field_advance';
+  $handler->display->display_options['fields']['field_advance']['table'] = 'field_data_field_advance';
+  $handler->display->display_options['fields']['field_advance']['field'] = 'field_advance';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_deal_status']['id'] = 'field_deal_status';
+  $handler->display->display_options['fields']['field_deal_status']['table'] = 'field_data_field_deal_status';
+  $handler->display->display_options['fields']['field_deal_status']['field'] = 'field_deal_status';
+  /* Field: Content: Date received */
+  $handler->display->display_options['fields']['field_date_received']['id'] = 'field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['table'] = 'field_data_field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['field'] = 'field_date_received';
+  $handler->display->display_options['fields']['field_date_received']['settings'] = array(
+    'format_type' => 'deal_date_format',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Date Funded */
+  $handler->display->display_options['fields']['field_date_funded']['id'] = 'field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['table'] = 'field_data_field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['field'] = 'field_date_funded';
+  $handler->display->display_options['fields']['field_date_funded']['settings'] = array(
+    'format_type' => 'deal_date_format',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Deal';
   $handler->display->display_options['path'] = 'deal-management-summary';
 
   /* Display: Stipulations */
