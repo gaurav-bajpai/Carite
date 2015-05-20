@@ -53,16 +53,25 @@ function deal_management_field_default_field_instances() {
   // Exported field_instance: 'node-deal_management-field_advance'
   $field_instances['node-deal_management-field_advance'] = array(
     'bundle' => 'deal_management',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 52,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 56,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -76,17 +85,18 @@ function deal_management_field_default_field_instances() {
     'label' => 'Advance',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'max' => '',
+      'min' => '',
+      'prefix' => '$',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 8,
     ),
   );
 
@@ -1030,14 +1040,14 @@ function deal_management_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd/m/Y - H:i:s',
-        'input_format_custom' => '',
+        'input_format' => 'custom',
+        'input_format_custom' => 'd-m-Y',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1136,14 +1146,14 @@ function deal_management_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'd/m/Y - H:i:s',
-        'input_format_custom' => '',
+        'input_format' => 'custom',
+        'input_format_custom' => 'd-m-Y',
         'label_position' => 'above',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1184,7 +1194,7 @@ function deal_management_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -2061,7 +2071,7 @@ function deal_management_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -2194,10 +2204,15 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 38,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 57,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2211,16 +2226,17 @@ function deal_management_field_default_field_instances() {
     'label' => 'Year',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'max' => 9999,
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
       'weight' => 6,
     ),
   );
