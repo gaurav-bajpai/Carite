@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * 
+ * Implement hook_menu()
+ */
+function carite_common_menu() {
+    $items['deal-details/%'] = array(
+      'title' => t('Deal Information'),
+      'description' => 'Deal Page of edit',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('deal_info_form', 1),
+      'access arguments' => array('access content'),
+    );
+    return $items;
+}
+
+/**
+ * Page callback for menu deal-details
+ * @param type $form
+ * @param type $from_state
+ * @param type $nid
+ * @return type
+ */
+function deal_info_form($form, &$from_state, $nid) {
+    if ($nid) {
+        $cutomer_info = array('field_f_name', 'field_l_name', 'field_address', 'field_city', 'field_state', 'field_zip_code', 'field_phone', 'field_email');
+        $cutomer_emp = array('field_lessee_employer', 'field_lessee_employer_position', 'field_lessee_employer_address', 'field_lessee_employer_city', 'field_lessee_employer_state', 'field_lessee_employer_zip_code', 'field_lessee_employer_phone', 'field_lessee_employer_income');
+        $vehicle = array('field_stock', 'field_vin', 'field_year', 'field_make', 'field_model', 'field_color');
+        $form['customer'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Customer'),
+          '#collapsible' => FALSE,
+          '#collapsed' => FALSE,
+        );
+        $form['customer_emp'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Customer'),
+          '#collapsible' => FALSE,
+          '#collapsed' => FALSE,
+        );
+        $form['vehicle'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Vehicle'),
+          '#collapsible' => FALSE,
+          '#collapsed' => FALSE,
+        );
+        $wrapper = entity_metadata_wrapper('node', $nid);
+        $fields = $wrapper->getPropertyInfo();
+        foreach ($fields as $field => $info) {
+            if (in_array($field, $cutomer_info)) {
+                $label = $info['label'];
+                $form['customer'][$field] = array(
+                  '#type' => 'textfield',
+                  '#title' => t($label),
+                  '#default_value' => $wrapper->$field->value(),
+                );
+            }
+            if (in_array($field, $cutomer_emp)) {
+                $label = $info['label'];
+                $form['customer_emp'][$field] = array(
+                  '#type' => 'textfield',
+                  '#title' => t($label),
+                  '#default_value' => $wrapper->$field->value(),
+                );
+            }
+            if (in_array($field, $vehicle)) {
+                $label = $info['label'];
+                $form['vehicle'][$field] = array(
+                  '#type' => 'textfield',
+                  '#title' => t($label),
+                  '#default_value' => $wrapper->$field->value(),
+                );
+            }
+        }
+    }
+    $block = views_embed_view('deal_management_summary', 'block_1');
+    $form['stip'] = array(
+      '#markup' => render($block),
+    );
+    return $form;
+}

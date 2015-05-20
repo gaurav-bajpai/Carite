@@ -1,0 +1,5 @@
+name = Carite Deal Info
+description = Provides all common function for this Project.
+core = 7.x
+package = custom
+version = 7.x-1.0
