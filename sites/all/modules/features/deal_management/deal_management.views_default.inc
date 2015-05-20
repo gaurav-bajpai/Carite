@@ -173,6 +173,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
   $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['type'] = 'text_default';
   /* Field: Car Company */
   $handler->display->display_options['fields']['field_make']['id'] = 'field_make';
   $handler->display->display_options['fields']['field_make']['table'] = 'field_data_field_make';
@@ -200,6 +201,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_advance']['id'] = 'field_advance';
   $handler->display->display_options['fields']['field_advance']['table'] = 'field_data_field_advance';
   $handler->display->display_options['fields']['field_advance']['field'] = 'field_advance';
+  $handler->display->display_options['fields']['field_advance']['type'] = 'text_default';
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_deal_status']['id'] = 'field_deal_status';
   $handler->display->display_options['fields']['field_deal_status']['table'] = 'field_data_field_deal_status';
@@ -421,6 +423,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
   $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['type'] = 'text_default';
   /* Field: Car Company */
   $handler->display->display_options['fields']['field_make']['id'] = 'field_make';
   $handler->display->display_options['fields']['field_make']['table'] = 'field_data_field_make';
@@ -448,6 +451,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_advance']['id'] = 'field_advance';
   $handler->display->display_options['fields']['field_advance']['table'] = 'field_data_field_advance';
   $handler->display->display_options['fields']['field_advance']['field'] = 'field_advance';
+  $handler->display->display_options['fields']['field_advance']['type'] = 'text_default';
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_deal_status']['id'] = 'field_deal_status';
   $handler->display->display_options['fields']['field_deal_status']['table'] = 'field_data_field_deal_status';

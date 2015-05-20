@@ -91,7 +91,7 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Contract Info',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_contract_monthly_income',
       1 => 'field_term',
@@ -121,7 +121,7 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Customer Info',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'group_co_lessee',
       1 => 'group_lessee',
@@ -149,7 +149,7 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dealership Info',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_location',
       1 => 'field_dealer_phone',
@@ -179,7 +179,7 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Employer Info',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'group_lessee_employer_details',
       1 => 'group_co_lessee_employer_details',
@@ -277,14 +277,14 @@ function deal_management_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Vehicle Info',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_stock',
       1 => 'field_vin',
-      2 => 'field_year',
-      3 => 'field_make',
-      4 => 'field_model',
-      5 => 'field_color',
+      2 => 'field_make',
+      3 => 'field_model',
+      4 => 'field_color',
+      5 => 'field_year',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

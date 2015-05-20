@@ -9,6 +9,7 @@ dependencies[] = email
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = list
+dependencies[] = number
 dependencies[] = stipulation
 dependencies[] = text
 dependencies[] = views
