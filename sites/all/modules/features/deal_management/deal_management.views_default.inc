@@ -541,6 +541,10 @@ function deal_management_views_default_views() {
   $handler->display->display_options['relationships']['field_refer_stipulation_tid']['table'] = 'field_data_field_refer_stipulation';
   $handler->display->display_options['relationships']['field_refer_stipulation_tid']['field'] = 'field_refer_stipulation_tid';
   $handler->display->display_options['relationships']['field_refer_stipulation_tid']['required'] = TRUE;
+  /* Relationship: Content revision: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_revision';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -558,13 +562,36 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_status_editable']['widget_type'] = '0';
   $handler->display->display_options['fields']['field_status_editable']['suppress_label'] = 0;
   $handler->display->display_options['fields']['field_status_editable']['suppress_description'] = 0;
-  /* Field: Taxonomy term: Term description */
-  $handler->display->display_options['fields']['description']['id'] = 'description';
-  $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['description']['field'] = 'description';
-  $handler->display->display_options['fields']['description']['relationship'] = 'field_refer_stipulation_tid';
-  $handler->display->display_options['fields']['description']['label'] = 'Description';
-  $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
+  /* Field: Content: Stipulation Description (editable) */
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['id'] = 'field_stipulation_description_editable';
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['table'] = 'field_data_field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['field'] = 'field_stipulation_description_editable';
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_stipulation_description_editable']['suppress_description'] = 0;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'User';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content revision: Updated date */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'node_revision';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = 'Last Activity';
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'deal_date_format';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
+  /* Field: Global: Editable view save button jump link */
+  $handler->display->display_options['fields']['editableviews_jump_link']['id'] = 'editableviews_jump_link';
+  $handler->display->display_options['fields']['editableviews_jump_link']['table'] = 'views';
+  $handler->display->display_options['fields']['editableviews_jump_link']['field'] = 'editableviews_jump_link';
+  $handler->display->display_options['fields']['editableviews_jump_link']['label'] = '';
+  $handler->display->display_options['fields']['editableviews_jump_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
