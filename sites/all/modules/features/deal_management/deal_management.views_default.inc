@@ -497,11 +497,14 @@ function deal_management_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
     'field_status_editable' => 'field_status_editable',
-    'description' => 'description',
+    'field_stipulation_description_editable' => 'field_stipulation_description_editable',
+    'name' => 'name',
+    'timestamp' => 'timestamp',
+    'editableviews_jump_link' => 'editableviews_jump_link',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -519,13 +522,33 @@ function deal_management_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'description' => array(
+    'field_stipulation_description_editable' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'timestamp' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'editableviews_jump_link' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['save_messages'] = 'none';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -559,18 +582,27 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['field_status_editable']['field'] = 'field_status_editable';
   $handler->display->display_options['fields']['field_status_editable']['label'] = 'Status';
   $handler->display->display_options['fields']['field_status_editable']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status_editable']['type'] = 'editable';
+  $handler->display->display_options['fields']['field_status_editable']['settings'] = array(
+    'click_to_edit' => 0,
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
   $handler->display->display_options['fields']['field_status_editable']['widget_type'] = '0';
   $handler->display->display_options['fields']['field_status_editable']['suppress_label'] = 0;
   $handler->display->display_options['fields']['field_status_editable']['suppress_description'] = 0;
-  /* Field: Content: Stipulation Description (editable) */
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['id'] = 'field_stipulation_description_editable';
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['table'] = 'field_data_field_stipulation_description';
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['field'] = 'field_stipulation_description_editable';
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['label'] = 'Description';
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['widget_type'] = '0';
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['suppress_label'] = 1;
-  $handler->display->display_options['fields']['field_stipulation_description_editable']['suppress_description'] = 0;
+  /* Field: Content: Stipulation Description */
+  $handler->display->display_options['fields']['field_stipulation_description']['id'] = 'field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['table'] = 'field_data_field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['field'] = 'field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_stipulation_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_stipulation_description']['type'] = 'editable';
+  $handler->display->display_options['fields']['field_stipulation_description']['settings'] = array(
+    'click_to_edit' => 0,
+    'empty_text' => '',
+    'fallback_format' => 'text_default',
+  );
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -586,12 +618,11 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'deal_date_format';
   $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
-  /* Field: Global: Editable view save button jump link */
-  $handler->display->display_options['fields']['editableviews_jump_link']['id'] = 'editableviews_jump_link';
-  $handler->display->display_options['fields']['editableviews_jump_link']['table'] = 'views';
-  $handler->display->display_options['fields']['editableviews_jump_link']['field'] = 'editableviews_jump_link';
-  $handler->display->display_options['fields']['editableviews_jump_link']['label'] = '';
-  $handler->display->display_options['fields']['editableviews_jump_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Status (field_status) */
+  $handler->display->display_options['sorts']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['sorts']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['sorts']['field_status_value']['field'] = 'field_status_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
