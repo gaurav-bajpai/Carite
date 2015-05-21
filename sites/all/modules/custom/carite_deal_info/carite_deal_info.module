@@ -4,13 +4,14 @@
  * 
  * Implement hook_menu()
  */
-function carite_common_menu() {
+function carite_deal_info_menu() {
     $items['deal-details/%'] = array(
       'title' => t('Deal Information'),
       'description' => 'Deal Page of edit',
       'page callback' => 'drupal_get_form',
       'page arguments' => array('deal_info_form', 1),
       'access arguments' => array('access content'),
+      'access callback' => TRUE,
     );
     return $items;
 }
