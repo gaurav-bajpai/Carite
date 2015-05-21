@@ -1,0 +1,10 @@
+name = Carite Feeds Import
+core = 7.x
+package = Feeds
+version = 7.x-1.0
+project = carite_feeds_import
+dependencies[] = ctools
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = deal_importer

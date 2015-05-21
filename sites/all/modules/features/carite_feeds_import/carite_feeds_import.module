@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Carite Feeds Import feature.
+ */
+
+include_once 'carite_feeds_import.features.inc';
