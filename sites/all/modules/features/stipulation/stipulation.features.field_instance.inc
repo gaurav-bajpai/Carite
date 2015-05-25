@@ -132,6 +132,47 @@ function stipulation_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-stipulation_status-field_stipulation_description'
+  $field_instances['node-stipulation_status-field_stipulation_description'] = array(
+    'bundle' => 'stipulation_status',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_stipulation_description',
+    'label' => 'Stipulation Description',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => -1,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-stipulation-field_rule'
   $field_instances['taxonomy_term-stipulation-field_rule'] = array(
     'bundle' => 'stipulation',
@@ -200,6 +241,44 @@ function stipulation_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-stipulation-field_stipulation_status'
+  $field_instances['taxonomy_term-stipulation-field_stipulation_status'] = array(
+    'bundle' => 'stipulation',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_stipulation_status',
+    'label' => 'Stipulation Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Refer Deal');
@@ -207,6 +286,8 @@ function stipulation_field_default_field_instances() {
   t('Rule');
   t('States');
   t('Status');
+  t('Stipulation Description');
+  t('Stipulation Status');
 
   return $field_instances;
 }

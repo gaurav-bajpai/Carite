@@ -576,21 +576,17 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Stipulation';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Status (editable) */
-  $handler->display->display_options['fields']['field_status_editable']['id'] = 'field_status_editable';
-  $handler->display->display_options['fields']['field_status_editable']['table'] = 'field_data_field_status';
-  $handler->display->display_options['fields']['field_status_editable']['field'] = 'field_status_editable';
-  $handler->display->display_options['fields']['field_status_editable']['label'] = 'Status';
-  $handler->display->display_options['fields']['field_status_editable']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_status_editable']['type'] = 'editable';
-  $handler->display->display_options['fields']['field_status_editable']['settings'] = array(
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['type'] = 'editable';
+  $handler->display->display_options['fields']['field_status']['settings'] = array(
     'click_to_edit' => 0,
+    'click_to_edit_style' => 'button',
     'empty_text' => '',
     'fallback_format' => 'list_default',
   );
-  $handler->display->display_options['fields']['field_status_editable']['widget_type'] = '0';
-  $handler->display->display_options['fields']['field_status_editable']['suppress_label'] = 0;
-  $handler->display->display_options['fields']['field_status_editable']['suppress_description'] = 0;
   /* Field: Content: Stipulation Description */
   $handler->display->display_options['fields']['field_stipulation_description']['id'] = 'field_stipulation_description';
   $handler->display->display_options['fields']['field_stipulation_description']['table'] = 'field_data_field_stipulation_description';
@@ -650,7 +646,103 @@ function deal_management_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'stipulation_status' => 'stipulation_status',
   );
+  /* Filter criterion: Taxonomy term: Stipulation Status (field_stipulation_status) */
+  $handler->display->display_options['filters']['field_stipulation_status_value']['id'] = 'field_stipulation_status_value';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['table'] = 'field_data_field_stipulation_status';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['field'] = 'field_stipulation_status_value';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['relationship'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['block_description'] = 'Stipulations Details';
+
+  /* Display: Attachment */
+  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content revision: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node_revision';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Content: Refer Stipulation (field_refer_stipulation) */
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['id'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['table'] = 'field_data_field_refer_stipulation';
+  $handler->display->display_options['relationships']['field_refer_stipulation_tid']['field'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['label'] = '';
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_status']['settings'] = array(
+    'click_to_edit' => 0,
+    'click_to_edit_style' => 'button',
+    'empty_text' => '',
+    'fallback_format' => 'list_default',
+  );
+  /* Field: Content: Stipulation Description */
+  $handler->display->display_options['fields']['field_stipulation_description']['id'] = 'field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['table'] = 'field_data_field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['field'] = 'field_stipulation_description';
+  $handler->display->display_options['fields']['field_stipulation_description']['label'] = '';
+  $handler->display->display_options['fields']['field_stipulation_description']['element_label_colon'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Content revision: Updated date */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'node_revision';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['timestamp']['custom_date_format'] = 'd-m-Y';
+  $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'stipulation_status' => 'stipulation_status',
+  );
+  /* Filter criterion: Taxonomy term: Stipulation Status (field_stipulation_status) */
+  $handler->display->display_options['filters']['field_stipulation_status_value']['id'] = 'field_stipulation_status_value';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['table'] = 'field_data_field_stipulation_status';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['field'] = 'field_stipulation_status_value';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['relationship'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_stipulation_status_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['displays'] = array(
+    'stipulations' => 'stipulations',
+    'default' => 0,
+    'deal_management_summary' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
   $export['deal_management_summary'] = $view;
 
   return $export;
