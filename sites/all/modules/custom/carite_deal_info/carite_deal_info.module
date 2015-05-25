@@ -84,8 +84,7 @@ function deal_info_form($form, &$from_state, $nid) {
 
 function carite_deal_info_form_alter(&$form, &$form_state, $form_id) {
     global $user;
-    if ( strpos($form_id, 'editablefields_form__node') !== false && $form['type']['#value'] == 'deal_management') {
-
+    if (in_array('Dealer', $user->roles) && strpos($form_id, 'editablefields_form__node') !== false && $form['type']['#value'] == 'deal_management') {
         $field = key($form_state['field']);
         $type = $form_state['field'][$field][LANGUAGE_NONE]['field']['type'];
         if ($type == 'list_text' || $type == 'taxonomy_term_reference') {
@@ -95,12 +94,11 @@ function carite_deal_info_form_alter(&$form, &$form_state, $form_id) {
             $form[$field][LANGUAGE_NONE][0]['email']['#attributes']['disabled'] = TRUE;
         }
         if ($type == 'datetime') {
-           
+
             $form[$field]['#attributes']['disabled'] = TRUE;
             $form[$field][LANGUAGE_NONE][0]['#attributes']['disabled'] = TRUE;
-             $form[$field][LANGUAGE_NONE]['#attributes']['disabled'] = TRUE;
-             $form[$field]['#attributes']['disabled'] = TRUE;
-             dsm($form);
+            $form[$field][LANGUAGE_NONE]['#attributes']['disabled'] = TRUE;
+            $form[$field]['#attributes']['disabled'] = TRUE;
         }
         $form[$field][LANGUAGE_NONE][0]['value']['#attributes']['disabled'] = TRUE;
     }
