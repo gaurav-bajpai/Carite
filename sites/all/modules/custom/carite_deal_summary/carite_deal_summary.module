@@ -108,25 +108,38 @@ function carite_deal_summary_block_view($delta = '') {
 }
 
 function _carite_deal_summary_CONTENT() {
-  $output = '<table>';
+  $output = '<table class="deal-summary-table">';
+  $output .= '<thead>';
   $output .= '<tr>';
   $output .= '<th>FUNDED</th>';
-  $output .= '<td>' . get_funded_deal_count() . '</td>';
   $output .= '<th>AVG DAYS TO FUND</th>';
-  $output .= '<td>' . get_avg_days_to_fund() . '</td>';
   $output .= '<th>TOTAL FUNDED</th>';
+  $output .= '</tr>';
+  $output .= '</thead>';
+  $output .= '</tbody>';
+  $output .= '<tr>';
+  $output .= '<td>' . get_funded_deal_count() . '</td>';
+  $output .= '<td>' . get_avg_days_to_fund() . '</td>';
   $output .= '<td>' . get_total_funded_deals() . '</td>';
   $output .= '</tr>';
+  $output .= '</tbody>';
+  $output .= '</table>';
 
-
+  $output .= '<table class="deal-summary-table">';
+  $output .= '<thead>';
   $output .= '<tr>';
   $output .= '<th>PENDING</th>';
-  $output .= '<td>' . get_pending_deal_count() . '</td>';
   $output .= '<th>AVG DAYS ON HOLD</th>';
-  $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
   $output .= '<th>TOTAL PENDING</th>';
+  $output .= '</tr>';
+  $output .= '</thead>';
+  $output .= '</tbody>';
+  $output .= '<tr>';
+  $output .= '<td>' . get_pending_deal_count() . '</td>';
+  $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
   $output .= '<td>' . get_total_pending_deals() . '</td>';
   $output .= '</tr>';
+  $output .= '</tbody>';
   $output .= '<table>';
   return $output;
 }
