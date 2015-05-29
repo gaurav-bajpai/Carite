@@ -407,6 +407,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Unique Deal ID';
+  $handler->display->display_options['fields']['title']['label'] = 'Account No.';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Lessee First Name */
@@ -482,7 +483,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operation';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Deal';
   $handler->display->display_options['path'] = 'deal-management-summary';
@@ -657,7 +658,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['block_description'] = 'Stipulations Details';
 
   /* Display: Attachment */
-  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler = $view->new_display('attachment', 'Attachment', 'deal_mgmt_attachment');
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
