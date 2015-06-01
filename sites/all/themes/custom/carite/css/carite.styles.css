@@ -140,29 +140,29 @@ img, media {
   margin-top: 1.2em; 
   border-radius: 0;
 }
-.block--carite-deal-summary table.views-table{  
+.page-deal-management-summary table.views-table{  
   width: 100%;
   border: 1px solid #caced2;
 }
-.block--carite-deal-summary table.views-table tbody,
-.block--carite-deal-summary table.views-table thead,
-.block--carite-deal-summary table.views-table tr{ 
+.page-deal-management-summary table.views-table tbody,
+.page-deal-management-summary table.views-table thead,
+.page-deal-management-summary table.views-table tr{ 
   display: inline-block;
   width: 100%;
 }
-.block--carite-deal-summary table.views-table th,
-.block--carite-deal-summary table.views-table td {
+.page-deal-management-summary table.views-table th,
+.page-deal-management-summary table.views-table td {
   float: left; 
   font-size: 13px;
 }
-.block--carite-deal-summary table.views-table td { 
+.page-deal-management-summary table.views-table td { 
   border-right: 1px solid #caced2;  
   padding: 10px;
   word-wrap: break-word;
   min-height: 180px;
 }
-.block--carite-deal-summary table.views-table tr{ background: none; border-bottom: 1px solid #caced2; }
-.block--carite-deal-summary table.views-table th{ 
+.page-deal-management-summary table.views-table tr{ background: none; border-bottom: 1px solid #caced2; }
+.page-deal-management-summary table.views-table th{ 
   background: #000 none repeat scroll 0 0;
   border-right: 1px solid #caced2;
   color: #fff;  
@@ -178,7 +178,7 @@ img, media {
 .views-field-field-year,
 .views-field-edit-node{ width: 6.5%; }
 
-.block--carite-deal-summary table.views-table .views-field-edit-node{ border-right: 0; }
+.page-deal-management-summary table.views-table .views-field-edit-node{ border-right: 0; }
 
 .views-field-field-color,
 .views-field-field-model,
