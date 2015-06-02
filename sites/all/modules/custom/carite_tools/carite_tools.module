@@ -78,6 +78,7 @@ function carite_tools_node_update($node) {
                 $node_deal = node_load($deal_id);
                 $node_deal->field_deal_status[LANGUAGE_NONE][0]['value'] = 'funded';
                 node_save($node_deal);
+                watchdog('debug', '<pre>'. print_r($node_deal, TRUE) .'</pre>');
             }
         }
     }
