@@ -570,11 +570,18 @@ function deal_management_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Stipulation';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Stipulation';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Status */
@@ -671,11 +678,18 @@ function deal_management_views_default_views() {
   $handler->display->display_options['relationships']['field_refer_stipulation_tid']['table'] = 'field_data_field_refer_stipulation';
   $handler->display->display_options['relationships']['field_refer_stipulation_tid']['field'] = 'field_refer_stipulation_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'field_refer_stipulation_tid';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Stipulation';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
   $handler->display->display_options['fields']['title_1']['field'] = 'title';
   $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
   /* Field: Content: Status */
@@ -734,9 +748,16 @@ function deal_management_views_default_views() {
   $handler->display->display_options['filters']['field_stipulation_status_value']['table'] = 'field_data_field_stipulation_status';
   $handler->display->display_options['filters']['field_stipulation_status_value']['field'] = 'field_stipulation_status_value';
   $handler->display->display_options['filters']['field_stipulation_status_value']['relationship'] = 'field_refer_stipulation_tid';
-  $handler->display->display_options['filters']['field_stipulation_status_value']['operator'] = 'not';
   $handler->display->display_options['filters']['field_stipulation_status_value']['value'] = array(
     1 => '1',
+  );
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    'Waived' => 'Waived',
+    'Closed' => 'Closed',
   );
   $handler->display->display_options['displays'] = array(
     'stipulations' => 'stipulations',

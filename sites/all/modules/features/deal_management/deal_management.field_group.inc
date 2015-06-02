@@ -113,6 +113,45 @@ function deal_management_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_customer_imp|node|deal_management|default';
+  $field_group->group_name = 'group_customer_imp';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'deal_management';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Customer',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_lessee_employer',
+      1 => 'field_lessee_employer_address',
+      2 => 'field_lessee_employer_city',
+      3 => 'field_lessee_employer_income',
+      4 => 'field_lessee_employer_phone',
+      5 => 'field_lessee_employer_position',
+      6 => 'field_lessee_employer_state',
+      7 => 'field_lessee_employer_zip_code',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Customer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-customer-imp field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_customer_imp|node|deal_management|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_customer_info|node|deal_management|form';
   $field_group->group_name = 'group_customer_info';
   $field_group->entity_type = 'node';
@@ -137,6 +176,45 @@ function deal_management_field_group_info() {
     ),
   );
   $export['group_customer_info|node|deal_management|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_customer|node|deal_management|default';
+  $field_group->group_name = 'group_customer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'deal_management';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Customer',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_f_name',
+      1 => 'field_l_name',
+      2 => 'field_address',
+      3 => 'field_city',
+      4 => 'field_state',
+      5 => 'field_zip_code',
+      6 => 'field_phone',
+      7 => 'field_email',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Customer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-customer field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_customer|node|deal_management|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -297,6 +375,42 @@ function deal_management_field_group_info() {
     ),
   );
   $export['group_vehicle_info|node|deal_management|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_vehicle|node|deal_management|default';
+  $field_group->group_name = 'group_vehicle';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'deal_management';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Vehicle',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_color',
+      1 => 'field_make',
+      2 => 'field_model',
+      3 => 'field_stock',
+      4 => 'field_vin',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Vehicle',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-vehicle field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_vehicle|node|deal_management|default'] = $field_group;
 
   return $export;
 }
