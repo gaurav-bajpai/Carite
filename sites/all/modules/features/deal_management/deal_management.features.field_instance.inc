@@ -28,7 +28,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -69,16 +69,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 56,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -125,7 +118,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -162,16 +155,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 14,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -208,16 +194,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 15,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -254,16 +233,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 13,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -308,16 +280,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 19,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -353,16 +318,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 28,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -400,16 +358,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 30,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -447,16 +398,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 31,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -494,16 +438,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 35,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -541,16 +478,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 34,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -588,16 +518,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 29,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -635,16 +558,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 32,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -682,16 +598,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 33,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -728,16 +637,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -774,16 +676,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 11,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -820,16 +715,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 18,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -866,16 +754,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 12,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -912,16 +793,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 16,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -958,16 +832,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 17,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1013,7 +880,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 41,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1051,16 +918,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 42,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1097,16 +957,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 45,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 43,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1139,16 +992,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 54,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1192,16 +1038,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1245,16 +1084,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 53,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 50,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1303,16 +1135,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 51,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 49,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1346,16 +1171,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 47,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 45,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1401,7 +1219,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1446,7 +1264,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1492,7 +1310,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1538,7 +1356,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 20,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1585,7 +1403,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 22,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1631,7 +1449,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 23,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1678,7 +1496,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 27,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1724,7 +1542,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 26,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1771,7 +1589,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 21,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1817,7 +1635,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 24,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1864,7 +1682,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 25,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1901,16 +1719,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 46,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 44,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1956,7 +1767,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 39,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2002,7 +1813,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 40,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2048,7 +1859,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2085,10 +1896,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 48,
+        'type' => 'hidden',
+        'weight' => 46,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2125,16 +1935,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 49,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 47,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2171,16 +1974,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 44,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 42,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2214,16 +2010,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 2,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2269,7 +2058,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2306,16 +2095,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 50,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 48,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2358,7 +2140,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 36,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2395,16 +2177,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 43,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2450,7 +2225,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 37,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2487,16 +2262,9 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 57,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2543,7 +2311,7 @@ function deal_management_field_default_field_instances() {
           'fallback_settings' => array(),
         ),
         'type' => 'editable',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
