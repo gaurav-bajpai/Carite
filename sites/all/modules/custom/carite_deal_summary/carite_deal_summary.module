@@ -33,12 +33,19 @@ function get_pending_deal_count() {
  */
 function get_avg_days_to_fund() {
   $total_deals = get_funded_deal_count();
+  $sum = 0;
   $query = db_select('node', 'n');
   $query->join('field_data_field_date_funded', 'df', 'df.entity_id = n.nid');
   $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
-  $query->addExpression('SUM(date(df.field_date_funded_value) - date(dr.field_date_received_value))', 'difference');
-  $sum = $query->execute()->fetchField();
-  return ($total_deals) ? ($sum/$total_deals) : $sum;
+  $query->fields('df', array('field_date_funded_value'));
+  $query->fields('dr', array('field_date_received_value'));
+  $result = $query->execute()->fetchAll();
+
+  foreach ($result as $key => $value) {
+    $sum += strtotime($value->field_date_funded_value) - strtotime($value->field_date_received_value);
+  }
+  $pending = ($total_deals) ? ($sum/$total_deals) : $sum;
+  return floor(($pending) / (3600*24));
 }
 
 /**
@@ -46,13 +53,21 @@ function get_avg_days_to_fund() {
  */
 function get_total_avg_deals_onhold() {
   $total_deals = get_pending_deal_count();
-  $curr_date = date('H:i:s');
+  $curr_date = strtotime(date('H:i:s'));
+  $sum = 0;
+
   $query = db_select('node', 'n');
   $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
   $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
-  $query->addExpression('SUM(field_date_received_value - :current_date)', 'avg_days_onhold', array(':current_date' => $curr_date));
-  $sum = $query->execute()->fetchField();
-  return ($total_deals) ? ($sum/$total_deals) : $sum;
+
+  $query->fields('dr', array('field_date_received_value'));
+  $result = $query->execute()->fetchAll();
+
+  foreach ($result as $key => $value) {
+    $sum += strtotime($value->field_date_received_value) - $curr_date;
+  }
+  $pending = ($total_deals) ? ($sum/$total_deals) : $sum;
+  return floor(($pending) / (3600*24));
 }
 
 /**
