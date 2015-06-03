@@ -77,6 +77,7 @@ function carite_tools_node_update($node) {
             if (_get_deal_stipulations_status($deal_id)) {
                 $node_deal = node_load($deal_id);
                 $node_deal->field_deal_status[LANGUAGE_NONE][0]['value'] = 'funded';
+                $node_deal->field_date_funded[LANGUAGE_NONE][0]['value'] = date('m-d-Y H:i:s', strtotime('now'));
                 node_save($node_deal);
             }
         }
@@ -108,3 +109,4 @@ function _get_deal_stipulations_status($deal_id) {
         return FALSE;
     }
 }
+
