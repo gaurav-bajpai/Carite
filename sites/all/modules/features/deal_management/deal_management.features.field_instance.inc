@@ -220,7 +220,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -549,46 +549,6 @@ function deal_management_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-deal_management-field_co_lessee_employer_state'
-  $field_instances['node-deal_management-field_co_lessee_employer_state'] = array(
-    'bundle' => 'deal_management',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_co_lessee_employer_state',
-    'label' => 'State',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-deal_management-field_co_lessee_employer_zipcode'
   $field_instances['node-deal_management-field_co_lessee_employer_zipcode'] = array(
     'bundle' => 'deal_management',
@@ -784,45 +744,6 @@ function deal_management_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deal_management-field_co_lessee_state'
-  $field_instances['node-deal_management-field_co_lessee_state'] = array(
-    'bundle' => 'deal_management',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_co_lessee_state',
-    'label' => 'State',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 19,
-    ),
-  );
-
   // Exported field_instance: 'node-deal_management-field_co_lessee_zip_code'
   $field_instances['node-deal_management-field_co_lessee_zip_code'] = array(
     'bundle' => 'deal_management',
@@ -904,7 +825,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1197,7 +1118,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 29,
     ),
   );
 
@@ -1617,52 +1538,6 @@ function deal_management_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deal_management-field_lessee_employer_state'
-  $field_instances['node-deal_management-field_lessee_employer_state'] = array(
-    'bundle' => 'deal_management',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lessee_employer_state',
-    'label' => 'State',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance:
   // 'node-deal_management-field_lessee_employer_zip_code'
   $field_instances['node-deal_management-field_lessee_employer_zip_code'] = array(
@@ -1745,7 +1620,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 28,
     ),
   );
 
@@ -1922,7 +1797,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 30,
     ),
   );
 
@@ -1961,7 +1836,7 @@ function deal_management_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 26,
+      'weight' => 31,
     ),
   );
 
@@ -2040,8 +1915,8 @@ function deal_management_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-deal_management-field_state'
-  $field_instances['node-deal_management-field_state'] = array(
+  // Exported field_instance: 'node-deal_management-field_state_co_lessee'
+  $field_instances['node-deal_management-field_state_co_lessee'] = array(
     'bundle' => 'deal_management',
     'default_value' => NULL,
     'deleted' => 0,
@@ -2049,16 +1924,10 @@ function deal_management_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'editablefields',
-        'settings' => array(
-          'click_to_edit' => FALSE,
-          'click_to_edit_style' => 'button',
-          'empty_text' => '',
-          'fallback_format' => NULL,
-          'fallback_settings' => array(),
-        ),
-        'type' => 'editable',
-        'weight' => 5,
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 55,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2068,20 +1937,128 @@ function deal_management_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_state',
+    'field_name' => 'field_state_co_lessee',
     'label' => 'State',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_state_co_lessee_emp'
+  $field_instances['node-deal_management-field_state_co_lessee_emp'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 57,
       ),
-      'type' => 'text_textfield',
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_state_co_lessee_emp',
+    'label' => 'State',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_state_employer'
+  $field_instances['node-deal_management-field_state_employer'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 56,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_state_employer',
+    'label' => 'State',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-deal_management-field_state_lessee'
+  $field_instances['node-deal_management-field_state_lessee'] = array(
+    'bundle' => 'deal_management',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 54,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_state_lessee',
+    'label' => 'State',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 9,
     ),
   );

@@ -273,27 +273,6 @@ function deal_management_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_co_lessee_employer_state'
-  $field_bases['field_co_lessee_employer_state'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_co_lessee_employer_state',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_co_lessee_employer_zipcode'
   $field_bases['field_co_lessee_employer_zipcode'] = array(
     'active' => 1,
@@ -394,27 +373,6 @@ function deal_management_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_co_lessee_state'
-  $field_bases['field_co_lessee_state'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_co_lessee_state',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 2,
     ),
     'translatable' => 0,
     'type' => 'text',
@@ -611,8 +569,8 @@ function deal_management_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'pending ' => ' Pending',
-        'funded ' => ' Funded',
+        'pending' => 'Pending',
+        'funded' => 'Funded',
       ),
       'allowed_values_function' => '',
     ),
@@ -822,27 +780,6 @@ function deal_management_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_lessee_employer_state'
-  $field_bases['field_lessee_employer_state'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_lessee_employer_state',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_lessee_employer_zip_code'
   $field_bases['field_lessee_employer_zip_code'] = array(
     'active' => 1,
@@ -1036,25 +973,108 @@ function deal_management_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_state'
-  $field_bases['field_state'] = array(
+  // Exported field_base: 'field_state_co_lessee'
+  $field_bases['field_state_co_lessee'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_state',
+    'field_name' => 'field_state_co_lessee',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'taxonomy',
     'settings' => array(
-      'max_length' => 2,
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'states',
+          'parent' => 0,
+        ),
+      ),
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_state_co_lessee_emp'
+  $field_bases['field_state_co_lessee_emp'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_state_co_lessee_emp',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'states',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_state_employer'
+  $field_bases['field_state_employer'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_state_employer',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'states',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_state_lessee'
+  $field_bases['field_state_lessee'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_state_lessee',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'states',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_stipulation'

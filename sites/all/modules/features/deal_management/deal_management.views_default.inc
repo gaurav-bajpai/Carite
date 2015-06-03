@@ -28,6 +28,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     3 => '3',
+    5 => '5',
     4 => '4',
   );
   $handler->display->display_options['cache']['type'] = 'none';
@@ -150,7 +151,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are currently no results to display.';
+  $handler->display->display_options['empty']['area']['content'] = 'No data found...';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Unique Deal ID */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -484,6 +485,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Operation';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit Deal';
   $handler->display->display_options['path'] = 'deal-management-summary';
@@ -623,10 +625,11 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'deal_date_format';
   $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Status (field_status) */
-  $handler->display->display_options['sorts']['field_status_value']['id'] = 'field_status_value';
-  $handler->display->display_options['sorts']['field_status_value']['table'] = 'field_data_field_status';
-  $handler->display->display_options['sorts']['field_status_value']['field'] = 'field_status_value';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -662,6 +665,14 @@ function deal_management_views_default_views() {
   $handler->display->display_options['filters']['field_stipulation_status_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    'Open' => 'Open',
+    'Waived' => 'Waived',
+  );
   $handler->display->display_options['block_description'] = 'Stipulations Details';
 
   /* Display: Attachment */
@@ -683,7 +694,8 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_refer_stipulation_tid';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Stipulation';
+  $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -727,6 +739,7 @@ function deal_management_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'custom';
   $handler->display->display_options['fields']['timestamp']['custom_date_format'] = 'd-m-Y';
   $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
