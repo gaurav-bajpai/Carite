@@ -17,8 +17,9 @@ function carite_preprocess_views_view_table(&$vars) {
         foreach ($vars['view']->result as $k => $row) {
             if (in_array('Underwriter', $user->roles)) {
                 $nid = $row->nid;
+                $cnt = _get_last_user_from_node($nid, TRUE);
                 $uid = _get_last_user_from_node($nid);
-                if ($user->uid != $uid) {
+                if ($user->uid != $uid && $cnt > 1) {
                     $vars['row_classes'][$k][] = "edited_by_other";
                     drupal_add_js(drupal_get_path('module', 'carite_common') . '/js/carite_common.js', 'file');
                 }

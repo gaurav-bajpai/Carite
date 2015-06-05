@@ -15,12 +15,18 @@ function get_term_name_from_tid($tid) {
     return $tname;
 }
 
-function _get_last_user_from_node($nid) {
+function _get_last_user_from_node($nid, $is_cnt = FALSE) {
     $query = db_select("node_revision", "ur");
-    $query->fields('ur',array('uid'));
+    $query->fields('ur', array('uid'));
     $query->condition('ur.nid', $nid);
     $query->orderBy('ur.timestamp', 'DESC');
-    $query->range(0,1);
-    $result = $query->execute()->fetch();
-    return $result->uid;
+    if ($is_cnt) {
+        $result = $query->execute()->rowCount();
+        return $result;
+    }
+    else {
+        $query->range(0, 1);
+        $result = $query->execute()->fetch();
+        return $result->uid;
+    }
 }
