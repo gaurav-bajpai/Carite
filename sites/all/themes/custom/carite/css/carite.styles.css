@@ -169,22 +169,22 @@ img, media {
   padding: 10px 4px;
 }
 .views-field-field-advance,
-.views-field-field-email,
 .views-field-field-l-name,
 .views-field-field-f-name{ width: 7%; }
 
+.views-field-field-email{ width: 14%; }
 .views-field-title{ width: 9.1%; }
 
 .views-field-field-year,
-.views-field-edit-node{ width: 7.3%; }
+.views-field-edit-node{ width: 4.3%; }
 
 .page-deal-management-summary table.views-table .views-field-edit-node{ border-right: 0; }
 
 .views-field-field-color,
-.views-field-field-model,
-.views-field-field-make { width: 6%; }
+.views-field-field-model{ width: 6%; }
 
+.views-field-field-make { width: 8%; }
 .views-field-field-deal-status,
 .views-field-field-phone{ width: 7.8%; }
 .views-field-field-date-received,
-.views-field-field-date-funded{ width: 11%; }
+.views-field-field-date-funded{ width: 8%; }
