@@ -157,9 +157,9 @@ img, media {
 }
 .page-deal-management-summary table.views-table td { 
   border-right: 1px solid #caced2;  
-  padding: 10px;
+  padding: 4px 4px 4px 4px;
   word-wrap: break-word;
-  min-height: 180px;
+  min-height: 40px;
 }
 .page-deal-management-summary table.views-table tr{ background: none; border-bottom: 1px solid #caced2; }
 .page-deal-management-summary table.views-table th{ 
@@ -171,12 +171,12 @@ img, media {
 .views-field-field-advance,
 .views-field-field-email,
 .views-field-field-l-name,
-.views-field-field-f-name{ width: 6%; }
+.views-field-field-f-name{ width: 7%; }
 
-.views-field-title{ width: 9%; }
+.views-field-title{ width: 9.1%; }
 
 .views-field-field-year,
-.views-field-edit-node{ width: 6.5%; }
+.views-field-edit-node{ width: 7.3%; }
 
 .page-deal-management-summary table.views-table .views-field-edit-node{ border-right: 0; }
 
@@ -185,6 +185,6 @@ img, media {
 .views-field-field-make { width: 6%; }
 
 .views-field-field-deal-status,
-.views-field-field-phone{ width: 7%; }
+.views-field-field-phone{ width: 7.8%; }
 .views-field-field-date-received,
 .views-field-field-date-funded{ width: 11%; }
