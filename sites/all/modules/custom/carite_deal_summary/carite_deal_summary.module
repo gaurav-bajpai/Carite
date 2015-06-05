@@ -135,7 +135,7 @@ function _carite_deal_summary_CONTENT() {
   $output .= '<tr>';
   $output .= '<td>' . get_funded_deal_count() . '</td>';
   $output .= '<td>' . get_avg_days_to_fund() . '</td>';
-  $output .= '<td>' . get_total_funded_deals() . '</td>';
+  $output .= '<td>$ ' . number_format(get_total_funded_deals(), 2) . '</td>';
   $output .= '</tr>';
   $output .= '</tbody>';
   $output .= '</table>';
@@ -152,7 +152,7 @@ function _carite_deal_summary_CONTENT() {
   $output .= '<tr>';
   $output .= '<td>' . get_pending_deal_count() . '</td>';
   $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
-  $output .= '<td>' . get_total_pending_deals() . '</td>';
+  $output .= '<td>$ ' . number_format(get_total_pending_deals(), 2) . '</td>';
   $output .= '</tr>';
   $output .= '</tbody>';
   $output .= '<table>';
