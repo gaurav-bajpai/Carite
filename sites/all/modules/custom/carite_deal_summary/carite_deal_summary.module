@@ -6,12 +6,13 @@
  *      Count of Deal
  */
 function get_funded_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'funded');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('n.status', '1');
+  $query->condition('ds.field_deal_status_value', 'funded');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
 
 /**
@@ -20,80 +21,100 @@ function get_funded_deal_count() {
  *      Count of Deal
  */
 function get_pending_deal_count() {
-    $query = db_select('node', 'n');
-    $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->fields('n', array('nid'));
-    $query->condition('ds.field_deal_status_value', 'pending');
-    $cnt = $query->execute()->rowCount();
-    return $cnt;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  $query->condition('n.status', '1');
+  $query->condition('ds.field_deal_status_value', 'pending');
+  $cnt = $query->execute()->rowCount();
+  return $cnt;
 }
 
 /**
  * @desc returns the average days to fund
  */
 function get_avg_days_to_fund() {
-    $total_deals = get_funded_deal_count();
+  $total_deals = get_funded_deal_count();
+  if ($total_deals > 0) {
     $sum = 0;
     $query = db_select('node', 'n');
+    $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
     $query->join('field_data_field_date_funded', 'df', 'df.entity_id = n.nid');
     $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
     $query->fields('df', array('field_date_funded_value'));
     $query->fields('dr', array('field_date_received_value'));
+    $query->condition('n.status', '1');
+    $query->condition('ds.field_deal_status_value', 'funded');
+
     $result = $query->execute()->fetchAll();
 
     foreach ($result as $key => $value) {
-        $sum += strtotime($value->field_date_funded_value) - strtotime($value->field_date_received_value);
+      $sum += (strtotime($value->field_date_funded_value) - strtotime($value->field_date_received_value));
     }
-    $pending = ($total_deals) ? ($sum / $total_deals) : $sum;
-    return floor(($pending) / (3600 * 24));
+    $pending = ($total_deals) ? ($sum/$total_deals) : $sum;
+    return round(($pending) / (3600*24));
+  }
+  else {
+    return 0;
+  }
 }
 
 /**
  * @desc returns the total average deals on hold.
  */
 function get_total_avg_deals_onhold() {
-    $total_deals = get_pending_deal_count();
-    $curr_date = strtotime(date('H:i:s'));
+  $total_deals = get_pending_deal_count();
+  if ($total_deals > 0) {
+    $curr_date = time();
     $sum = 0;
 
     $query = db_select('node', 'n');
     $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
     $query->join('field_data_field_date_received', 'dr', 'dr.entity_id = n.nid');
 
+    $query->condition('ds.field_deal_status_value', 'pending');
+    $query->condition('n.status', '1');
+
     $query->fields('dr', array('field_date_received_value'));
     $result = $query->execute()->fetchAll();
 
     foreach ($result as $key => $value) {
-        $sum += strtotime($value->field_date_received_value) - $curr_date;
+      $sum += ($curr_date - strtotime($value->field_date_received_value));
     }
-    $pending = ($total_deals) ? ($sum / $total_deals) : $sum;
-    return floor(($pending) / (3600 * 24));
+    $pending = ($total_deals) ? ($sum/$total_deals) : $sum;
+    return round(($pending) / (3600*24));
+  }
+  else {
+    return 0;
+  }
 }
 
 /**
  * @desc returns the total number of funded deals
  */
 function get_total_funded_deals() {
-    $query = db_select('node', 'n');
-    $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
-    $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->condition('ds.field_deal_status_value', 'funded');
-    $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
-    $total = $query->execute()->fetchField();
-    return $total;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->condition('n.status', '1');
+  $query->condition('ds.field_deal_status_value', 'funded');
+  $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
+  $total = $query->execute()->fetchField();
+  return $total;
 }
 
 /**
  * @desc returns the total number of pending deals
  */
 function get_total_pending_deals() {
-    $query = db_select('node', 'n');
-    $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
-    $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
-    $query->condition('ds.field_deal_status_value', 'pending');
-    $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
-    $total = $query->execute()->fetchField();
-    return $total;
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_advance', 'fa', 'fa.entity_id = n.nid');
+  $query->join('field_data_field_deal_status', 'ds', 'ds.entity_id = n.nid');
+  $query->condition('n.status', '1');
+  $query->condition('ds.field_deal_status_value', 'pending');
+  $query->addExpression('SUM(field_advance_value)', 'field_advance_value');
+  $total = $query->execute()->fetchField();
+  return $total;
 }
 
 /**
