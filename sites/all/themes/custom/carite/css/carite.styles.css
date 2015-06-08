@@ -196,6 +196,13 @@ img, media {
     font-weight: bold;
     font-size: 14px;
 }
+.user-login-block a {
+    color: #3b7bc9;
+    text-decoration: none;
+}
+.user-login-block a:hover {
+    text-decoration :underline;
+}
 .page-admin-user-managment  .view-content {
     font-size: 14px;
 }
