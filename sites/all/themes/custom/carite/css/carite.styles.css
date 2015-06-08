@@ -1,11 +1,11 @@
 img, media {
-  max-width: 100%;
+    max-width: 100%;
 }
 .l-branding,
 .l-region--footer,
 .l-main{
-	max-width: 1200px;
-	margin: 0 auto;	
+    max-width: 1200px;
+    margin: 0 auto;	
 }
 .l-branding{ padding-top: 15px; }
 .l-header{ background: #F2CA34; }
@@ -15,12 +15,12 @@ img, media {
     margin-bottom: 10px;
 }
 .l-region--branding{
-	display: inline-block;
-	width: 80%;
-	vertical-align: top;
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
 }
 .l-main{
-	min-height: 430px;
+    min-height: 430px;
 }
 /*Main Menu*/
 #block-system-main-menu ul li{
@@ -30,63 +30,63 @@ img, media {
     padding-right: 3em;
 }
 #block-system-main-menu li a{ 
-	color: #fff; 
-	text-decoration: none;
+    color: #fff; 
+    text-decoration: none;
 }
 #block-system-main-menu li a.active { color: #000; }
 .l-footer{ 
-	background: #333; 
-	color: #fff; 
+    background: #333; 
+    color: #fff; 
 }
 .l-region--footer{ 
-	padding: 3% 0 2%; 
-	font-size: 13px;
+    padding: 3% 0 2%; 
+    font-size: 13px;
 }
 
 /*Deal management page CSS*/
 .node--deal-management .group-left,
 .node--deal-management .group-middle,
 .node--deal-management .group-right{ 
-  border: 1px solid #caced2;
-  float: left;
-  margin-right: 10px;
-  min-height: 560px;
-  width: 32%;
+    border: 1px solid #caced2;
+    float: left;
+    margin-right: 10px;
+    min-height: 560px;
+    width: 32%;
 }
 .node--deal-management h3{
-  background: #000 none repeat scroll 0 0;
-  margin: 0;
-  padding: 10px; 
+    background: #000 none repeat scroll 0 0;
+    margin: 0;
+    padding: 10px; 
 }
 .node--deal-management h3 span{ color: #fff; }
 .node--deal-management .field-group-div .field__label {
-  display: inline-block;
-  width: 23%;
-  font-weight: normal;
-  vertical-align: top;
+    display: inline-block;
+    width: 23%;
+    font-weight: normal;
+    vertical-align: top;
 }
 .node--deal-management .field-group-div .field__items{
-  display: inline-block;
-  width: 77%;
+    display: inline-block;
+    width: 77%;
 }
 .node--deal-management .field-group-div .field__items label{ 
-  display: inline-block;
-  width: 5%;
+    display: inline-block;
+    width: 5%;
 }
 .node--deal-management .field--name-field-address .field__label { vertical-align: top; }
 
 .node--deal-management .field-group-div .field__items input,
 .node--deal-management .field-group-div .field__items textarea {
-  border: 1px solid #caced2;
-  border-radius: 0;
-  display: inline-block;
-  float: right;
-  width: 90%;
-  vertical-align: top;
+    border: 1px solid #caced2;
+    border-radius: 0;
+    display: inline-block;
+    float: right;
+    width: 90%;
+    vertical-align: top;
 }
 .node--deal-management .field-group-div .field__items textarea { 
-  float: none; 
-  width: 100%; 
+    float: none; 
+    width: 100%; 
 }
 .node--deal-management .field-group-div .field{ padding: 10px; }
 
@@ -95,10 +95,10 @@ img, media {
 
 .view-id-deal_management_summary{ margin-bottom: 20px; }
 .views-form-deal-management-summary-stipulations table th{
-  background: #000;
-  color: #fff;
-  padding: 5px 10px; 
-  border-left: 1px solid #caced2;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px; 
+    border-left: 1px solid #caced2;
 }
 .views-form-deal-management-summary-stipulations table tbody,
 .view-display-id-deal_mgmt_attachment table.views-table tbody{ border: 1px solid #caced2; }
@@ -107,84 +107,119 @@ img, media {
 .view-display-id-deal_mgmt_attachment table.views-table tbody tr{ background: none; }
 
 .views-form-deal-management-summary-stipulations table tbody tr td{ 
-  border-left: 1px solid #caced2;
-  padding: 5px 10px;
+    border-left: 1px solid #caced2;
+    padding: 5px 10px;
 }
 .views-form-deal-management-summary-stipulations .form-actions{ margin-top: 1em; }
 .views-form-deal-management-summary-stipulations .form-actions input{ border-radius: 0; }
 .view-display-id-deal_mgmt_attachment table.views-table tbody tr{ 
-  border-bottom: 1px solid #caced2;  
+    border-bottom: 1px solid #caced2;  
 }
 .view-display-id-deal_mgmt_attachment table.views-table tbody tr td{
-  padding: 4px 9px;
-  text-align: left;
-  border-right: 1px solid #caced2;
+    padding: 4px 9px;
+    text-align: left;
+    border-right: 1px solid #caced2;
 }
 
 /* Deal Management Summary */
 .block--carite-deal-summary .block__content table.deal-summary-table{
-  margin-bottom: 20px; 
-  width: 100%;
+    margin-bottom: 20px; 
+    width: 100%;
 }
 .block--carite-deal-summary .block__content table.deal-summary-table thead tr th { 
-   background: #000;
-   color: #fff;
+    background: #000;
+    color: #fff;
 }
 .block--carite-deal-summary .block__content table.deal-summary-table thead tr th,
 .block--carite-deal-summary .block__content table.deal-summary-table tbody tr td { 
-  padding: 12px;
-  border: 1px solid #caced2;
-  font-size: 14px;
+    padding: 12px;
+    border: 1px solid #caced2;
+    font-size: 14px;
 }
 .view-id-deal_management_summary .views-exposed-form .views-submit-button input{ 
-  margin-top: 1.2em; 
-  border-radius: 0;
+    margin-top: 1.2em; 
+    border-radius: 0;
 }
 .page-deal-management-summary table.views-table{  
-  width: 100%;
-  border: 1px solid #caced2;
+    width: 100%;
+    border: 1px solid #caced2;
 }
 .page-deal-management-summary table.views-table tbody,
 .page-deal-management-summary table.views-table thead,
 .page-deal-management-summary table.views-table tr{ 
-  display: inline-block;
-  width: 100%;
+    display: inline-block;
+    width: 100%;
 }
 .page-deal-management-summary table.views-table th,
 .page-deal-management-summary table.views-table td {
-  float: left; 
-  font-size: 13px;
+    float: left; 
+    font-size: 13px;
 }
 .page-deal-management-summary table.views-table td { 
-  border-right: 1px solid #caced2;  
-  padding: 10px;
-  word-wrap: break-word;
-  min-height: 180px;
+    border-right: 1px solid #caced2;  
+    padding: 4px 4px 4px 4px;
+    word-wrap: break-word;
+    min-height: 40px;
 }
 .page-deal-management-summary table.views-table tr{ background: none; border-bottom: 1px solid #caced2; }
 .page-deal-management-summary table.views-table th{ 
-  background: #000 none repeat scroll 0 0;
-  border-right: 1px solid #caced2;
-  color: #fff;  
-  padding: 10px 4px;
+    background: #000 none repeat scroll 0 0;
+    border-right: 1px solid #caced2;
+    color: #fff;  
+    padding: 10px 4px;
 }
 .views-field-field-advance,
-.views-field-field-email,
 .views-field-field-l-name,
-.views-field-field-f-name{ width: 6%; }
+.views-field-field-f-name{ width: 7%; }
 
-.views-field-title{ width: 9%; }
+.views-field-field-email{ width: 13.2%; }
+.views-field-title{ width: 9.1%; }
 
 .views-field-field-year,
-.views-field-edit-node{ width: 6.5%; }
+.views-field-edit-node{ width: 4.3%; }
 
 .page-deal-management-summary table.views-table .views-field-edit-node{ border-right: 0; }
 
 .views-field-field-color,
-.views-field-field-model,
-.views-field-field-make { width: 6%; }
+.views-field-field-model{ width: 6.4%; }
 
+.views-field-field-make { width: 8%; }
 .views-field-field-deal-status,
-.views-field-field-phone{ width: 7%; }
+.views-field-field-phone{ width: 7.8%; }
 .views-field-field-date-received,
-.views-field-field-date-funded{ width: 11%; }
+.views-field-field-date-funded{ width: 8%; }
+.node-type-deal-management .tabs, .node-type-deal-management .breadcrumb, .page-deal-management-summary .breadcrumb, .node-type-deal-management .form-actions { display: none; }
+
+
+.user-login-block {
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+.page-admin-user-managment  .view-content {
+    font-size: 14px;
+}
+.page-admin-user-managment .view-content a {
+    text-decoration: none;
+    color: #3b7bc9;
+}
+.page-admin-user-managment .view-content a:hover {
+    text-decoration: underline;
+}
+.page-admin-structure-taxonomy-stipulation #taxonomy {
+    font-size: 15px;
+}
+.page-admin-structure-taxonomy-stipulation #taxonomy a {
+    text-decoration: none;
+    color: #3b7bc9;
+}
+.page-admin-structure-taxonomy-stipulation #taxonomy a:hover {
+    text-decoration: underline;
+}
+.page-deal-management-summary table.views-table a {
+    text-decoration: none;
+    color: #3b7bc9; 
+}
+.page-deal-management-summary table.views-table a:hover {
+    text-decoration: underline;
+}

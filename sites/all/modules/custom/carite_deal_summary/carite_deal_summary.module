@@ -117,65 +117,88 @@ function get_total_pending_deals() {
   return $total;
 }
 
-
 /**
  * Implements hook_block_info().
  */
 function carite_deal_summary_block_info() {
-  $blocks = array();
-  $blocks['carite_deal_summary'] = array(
-    'info' => t('Deal Summary'),
-  );
-  return $blocks;
+    $blocks = array();
+    $blocks['carite_deal_summary'] = array(
+      'info' => t('Deal Summary'),
+    );
+    $blocks['carite_login_logout'] = array(
+      'info' => t('User Block'),
+    );
+    return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
 function carite_deal_summary_block_view($delta = '') {
-  $block = array();
-  switch ($delta) {
-    case 'carite_deal_summary':
-      $block['subject'] = '';
-      $block['content'] = _carite_deal_summary_CONTENT();
-    break;
-  }
-  return $block;
+    $block = array();
+    switch ($delta) {
+        case 'carite_deal_summary':
+            $block['subject'] = '';
+            $block['content'] = _carite_deal_summary_CONTENT();
+            break;
+        case 'carite_login_logout':
+            $block['subject'] = '';
+            $block['content'] = _carite_user_block_CONTENT();
+            break;
+    }
+    return $block;
+}
+
+function _carite_user_block_CONTENT() {
+    global $user;
+    $output = "";
+    $output = "<div class='user-login-block'>";
+    if ($user->uid != 0) {
+        // code for the logout button
+        $output .= "<span class='welcome'>Welcome: " . $user->name . '</span>';
+        $output .= "<span class='logout'> | <a href='/user/logout'>Log out</a></span>";
+    }
+    else {
+        // code for the login button
+        $output .= "<a href='user'>Login</a>";
+    }
+    $output .= "</div>";
+    return $output;
 }
 
 function _carite_deal_summary_CONTENT() {
-  $output = '<table class="deal-summary-table">';
-  $output .= '<thead>';
-  $output .= '<tr>';
-  $output .= '<th>FUNDED</th>';
-  $output .= '<th>AVG DAYS TO FUND</th>';
-  $output .= '<th>TOTAL FUNDED</th>';
-  $output .= '</tr>';
-  $output .= '</thead>';
-  $output .= '</tbody>';
-  $output .= '<tr>';
-  $output .= '<td>' . get_funded_deal_count() . '</td>';
-  $output .= '<td>' . get_avg_days_to_fund() . '</td>';
-  $output .= '<td>' . get_total_funded_deals() . '</td>';
-  $output .= '</tr>';
-  $output .= '</tbody>';
-  $output .= '</table>';
+    $output = '<table class="deal-summary-table">';
+    $output .= '<thead>';
+    $output .= '<tr>';
+    $output .= '<th>FUNDED</th>';
+    $output .= '<th>AVG DAYS TO FUND</th>';
+    $output .= '<th>TOTAL FUNDED</th>';
+    $output .= '</tr>';
+    $output .= '</thead>';
+    $output .= '</tbody>';
+    $output .= '<tr>';
+    $output .= '<td>' . get_funded_deal_count() . '</td>';
+    $output .= '<td>' . get_avg_days_to_fund() . '</td>';
+    $output .= '<td>$ ' . number_format(get_total_funded_deals(), 2) . '</td>';
+    $output .= '</tr>';
+    $output .= '</tbody>';
+    $output .= '</table>';
 
-  $output .= '<table class="deal-summary-table">';
-  $output .= '<thead>';
-  $output .= '<tr>';
-  $output .= '<th>PENDING</th>';
-  $output .= '<th>AVG DAYS ON HOLD</th>';
-  $output .= '<th>TOTAL PENDING</th>';
-  $output .= '</tr>';
-  $output .= '</thead>';
-  $output .= '</tbody>';
-  $output .= '<tr>';
-  $output .= '<td>' . get_pending_deal_count() . '</td>';
-  $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
-  $output .= '<td>' . get_total_pending_deals() . '</td>';
-  $output .= '</tr>';
-  $output .= '</tbody>';
-  $output .= '<table>';
-  return $output;
+    $output .= '<table class="deal-summary-table">';
+    $output .= '<thead>';
+    $output .= '<tr>';
+    $output .= '<th>PENDING</th>';
+    $output .= '<th>AVG DAYS ON HOLD</th>';
+    $output .= '<th>TOTAL PENDING</th>';
+    $output .= '</tr>';
+    $output .= '</thead>';
+    $output .= '</tbody>';
+    $output .= '<tr>';
+    $output .= '<td>' . get_pending_deal_count() . '</td>';
+    $output .= '<td>' . get_total_avg_deals_onhold() . '</td>';
+    $output .= '<td>$ ' . number_format(get_total_pending_deals(), 2) . '</td>';
+    $output .= '</tr>';
+    $output .= '</tbody>';
+    $output .= '<table>';
+    return $output;
 }
