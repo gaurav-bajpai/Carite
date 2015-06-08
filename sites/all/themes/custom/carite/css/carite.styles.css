@@ -189,8 +189,31 @@ img, media {
 .views-field-field-date-received,
 .views-field-field-date-funded{ width: 8%; }
 .node-type-deal-management .tabs, .node-type-deal-management .breadcrumb, .page-deal-management-summary .breadcrumb, .node-type-deal-management .form-actions { display: none; }
+
+
 .user-login-block {
     float: right;
     font-weight: bold;
     font-size: 14px;
+}
+.view-content .page-admin-user-managment {
+    font-size: 14px;
+}
+.view-content .page-admin-user-managment a {
+    text-decoration: none;
+    color: #000;
+}
+.view-content .page-admin-user-managment a :hover {
+    text-decoration: underline;
+}
+.view-content .page-admin-user-managment 
+.page-admin-structure-taxonomy-stipulation #taxonomy {
+    font-size: 15px;
+}
+.page-admin-structure-taxonomy-stipulation #taxonomy a {
+    text-decoration: none;
+    color: #000;
+}
+.page-admin-structure-taxonomy-stipulation #taxonomy a :hover {
+    text-decoration: underline;
 }
