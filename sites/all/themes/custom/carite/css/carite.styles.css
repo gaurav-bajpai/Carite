@@ -201,7 +201,7 @@ img, media {
 }
 .page-admin-user-managment .view-content a {
     text-decoration: none;
-    color: #000;
+    color: #3b7bc9;
 }
 .page-admin-user-managment .view-content a:hover {
     text-decoration: underline;
@@ -211,8 +211,15 @@ img, media {
 }
 .page-admin-structure-taxonomy-stipulation #taxonomy a {
     text-decoration: none;
-    color: #000;
+    color: #3b7bc9;
 }
 .page-admin-structure-taxonomy-stipulation #taxonomy a:hover {
+    text-decoration: underline;
+}
+.page-deal-management-summary table.views-table a {
+    text-decoration: none;
+    color: #3b7bc9; 
+}
+.page-deal-management-summary table.views-table a:hover {
     text-decoration: underline;
 }
