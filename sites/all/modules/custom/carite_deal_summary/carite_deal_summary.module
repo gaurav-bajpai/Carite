@@ -151,12 +151,13 @@ function carite_deal_summary_block_view($delta = '') {
 
 function _carite_user_block_CONTENT() {
     global $user;
+    global $base_url;
     $output = "";
     $output = "<div class='user-login-block'>";
     if ($user->uid != 0) {
         // code for the logout button
         $output .= "<span class='welcome'>Welcome: " . $user->name . '</span>';
-        $output .= "<span class='logout'> | <a href='/user/logout'>Log out</a></span>";
+        $output .= '<span class="logout"> | <a href="'.$base_url.'/user/logout">Log out</a></span>';
     }
     else {
         // code for the login button
