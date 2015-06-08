@@ -172,7 +172,7 @@ img, media {
 .views-field-field-l-name,
 .views-field-field-f-name{ width: 7%; }
 
-.views-field-field-email{ width: 14%; }
+.views-field-field-email{ width: 13.3%; }
 .views-field-title{ width: 9.1%; }
 
 .views-field-field-year,
@@ -181,10 +181,11 @@ img, media {
 .page-deal-management-summary table.views-table .views-field-edit-node{ border-right: 0; }
 
 .views-field-field-color,
-.views-field-field-model{ width: 6%; }
+.views-field-field-model{ width: 6.4%; }
 
 .views-field-field-make { width: 8%; }
 .views-field-field-deal-status,
 .views-field-field-phone{ width: 7.8%; }
 .views-field-field-date-received,
 .views-field-field-date-funded{ width: 8%; }
+.node-type-deal-management .tabs { display: none; }
