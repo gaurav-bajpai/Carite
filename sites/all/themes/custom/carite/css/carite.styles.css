@@ -203,7 +203,7 @@ img, media {
     text-decoration: none;
     color: #000;
 }
-.view-content .page-admin-user-managment a :hover {
+.view-content .page-admin-user-managment a:hover {
     text-decoration: underline;
 }
 .view-content .page-admin-user-managment 
@@ -214,6 +214,6 @@ img, media {
     text-decoration: none;
     color: #000;
 }
-.page-admin-structure-taxonomy-stipulation #taxonomy a :hover {
+.page-admin-structure-taxonomy-stipulation #taxonomy a:hover {
     text-decoration: underline;
 }
