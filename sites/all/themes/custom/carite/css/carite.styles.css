@@ -188,4 +188,4 @@ img, media {
 .views-field-field-phone{ width: 7.8%; }
 .views-field-field-date-received,
 .views-field-field-date-funded{ width: 8%; }
-.node-type-deal-management .tabs, .node-type-deal-management .breadcrumb, .node-type-deal-management .form-actions { display: none; }
+.node-type-deal-management .tabs, .node-type-deal-management .breadcrumb, .page-deal-management-summary .breadcrumb, .node-type-deal-management .form-actions { display: none; }
