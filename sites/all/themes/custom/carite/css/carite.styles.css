@@ -196,17 +196,16 @@ img, media {
     font-weight: bold;
     font-size: 14px;
 }
-.view-content .page-admin-user-managment {
+.page-admin-user-managment  .view-content {
     font-size: 14px;
 }
-.view-content .page-admin-user-managment a {
+.page-admin-user-managment .view-content a {
     text-decoration: none;
     color: #000;
 }
-.view-content .page-admin-user-managment a:hover {
+.page-admin-user-managment .view-content a:hover {
     text-decoration: underline;
 }
-.view-content .page-admin-user-managment 
 .page-admin-structure-taxonomy-stipulation #taxonomy {
     font-size: 15px;
 }
