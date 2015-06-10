@@ -231,11 +231,12 @@ img, media {
     text-decoration: underline;
 }
 .back_to_deal {
+    float: right;
     font-size: 15px;
-    position: absolute;
-    right: 35px;
-    bottom: 35px;
     font-weight: bold;
+    margin-top: -50px;
+    position: relative;
+    right: 35px;
 }
 .back_to_deal a {
     text-decoration: none;
