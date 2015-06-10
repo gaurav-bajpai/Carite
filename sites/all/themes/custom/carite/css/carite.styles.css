@@ -232,6 +232,10 @@ img, media {
 }
 .back_to_deal {
     font-size: 15px;
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    font-weight: bold;
 }
 .back_to_deal a {
     text-decoration: none;
