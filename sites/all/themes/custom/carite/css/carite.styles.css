@@ -230,3 +230,13 @@ img, media {
 .page-deal-management-summary table.views-table a:hover {
     text-decoration: underline;
 }
+.back_to_deal {
+    font-size: 15px;
+}
+.back_to_deal a {
+    text-decoration: none;
+    color: #3b7bc9;
+}
+.back_to_deal a:hover {
+    text-decoration: underline;
+}
