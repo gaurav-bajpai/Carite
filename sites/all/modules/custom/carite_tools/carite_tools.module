@@ -123,11 +123,13 @@ function carite_tools_get_popup_content() {
   $query = drupal_get_query_parameters();
   if (isset($query['nid'])) {
     $uid = _get_last_user_from_node($query['nid']);
-    $name = carite_tools_get_user_details($uid, 'name');
-    $status = array(
-      'status' => 'TRUE',
-      'text' => t('This deal is being edited by :name', array(':name' => $name)),
-    );
+    if ($uid) {
+      $name = carite_tools_get_user_details($uid, 'name');
+      $status = array(
+        'status' => 'TRUE',
+        'text' => t('This deal is being edited by :name', array(':name' => $name)),
+      );
+    }
   }
   else {
    $status = array(
