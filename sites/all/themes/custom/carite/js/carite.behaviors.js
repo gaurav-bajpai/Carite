@@ -62,11 +62,12 @@
       $(selector).once('custom-tooltip', function() {
 
           var classes = $(selector).attr('class').split(' ');
+          var index = ($(selector).hasClass('views-row-last') || $(selector).hasClass('views-row-last')) ? 3 : 2;
           $.ajax({
             type: "GET",
             url: Drupal.settings.basePath + "carite-get-popup",
             cache: false,
-            data: {'nid' : classes[2]},
+            data: {'nid' : classes[index]},
             dataType : 'json',
             success: function(data) {
               if (data.status == 'TRUE') {
