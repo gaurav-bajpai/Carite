@@ -161,7 +161,7 @@ function _carite_user_block_CONTENT() {
     }
     else {
         // code for the login button
-        $output .= "<a href='user'>Login</a>";
+        $output .= "<a href='/user'>Login</a>";
     }
     $output .= "</div>";
     return $output;
