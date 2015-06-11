@@ -10,10 +10,10 @@
    * In most cases, there is no good reason to NOT wrap your markup producing
    * JavaScript in a theme function.
    */
-  Drupal.theme.prototype.{{ THEME CAMELCASE LOWER }}ExampleButton = function (path, title) {
-    // Create an anchor element with jQuery.
-    return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
-  };
+  // Drupal.theme.prototype.{{ THEME CAMELCASE LOWER }}ExampleButton = function (path, title) {
+  //   // Create an anchor element with jQuery.
+  //   return $('<a href="' + path + '" title="' + title + '">' + title + '</a>');
+  // };
 
   /**
    * Behaviors are Drupal's way of applying JavaScript to a page. In short, the
@@ -38,23 +38,55 @@
    *   Drupal.settings directly you should use this because of potential
    *   modifications made by the Ajax callback that also produced 'context'.
    */
-  Drupal.behaviors.{{ THEME CAMELCASE LOWER }}ExampleBehavior = {
-    attach: function (context, settings) {
-      // By using the 'context' variable we make sure that our code only runs on
-      // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
-      // we don't run the same piece of code for an HTML snippet that we already
-      // processed previously. By using .once('foo') all processed elements will
-      // get tagged with a 'foo-processed' class, causing all future invocations
-      // of this behavior to ignore them.
-      $('.some-selector', context).once('foo', function () {
-        // Now, we are invoking the previously declared theme function using two
-        // settings as arguments.
-        var $anchor = Drupal.theme('{{ THEME CAMELCASE LOWER }}ExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
+  // Drupal.behaviors.{{ THEME CAMELCASE LOWER }}ExampleBehavior = {
+  //   attach: function (context, settings) {
+  //     // By using the 'context' variable we make sure that our code only runs on
+  //     // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
+  //     // we don't run the same piece of code for an HTML snippet that we already
+  //     // processed previously. By using .once('foo') all processed elements will
+  //     // get tagged with a 'foo-processed' class, causing all future invocations
+  //     // of this behavior to ignore them.
+  //     $('.some-selector', context).once('foo', function () {
+  //       // Now, we are invoking the previously declared theme function using two
+  //       // settings as arguments.
+  //       var $anchor = Drupal.theme('{{ THEME CAMELCASE LOWER }}ExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
 
-        // The anchor is then appended to the current element.
-        $anchor.appendTo(this);
+  //       // The anchor is then appended to the current element.
+  //       $anchor.appendTo(this);
+  //     });
+  //   }
+  // };
+  Drupal.behaviors.CaritePopup = {
+    attach: function (context, settings) {
+      var selector = '#block-carite-deal-summary-carite-deal-summary tr.edited_by_other';
+      $(selector).once('custom-tooltip', function() {
+
+          var classes = $(selector).attr('class').split(' ');
+          $.ajax({
+            type: "GET",
+            url: Drupal.settings.basePath + "carite-get-popup",
+            cache: false,
+            data: {'nid' : classes[2]},
+            dataType : 'json',
+            success: function(data) {
+              if (data.status == 'TRUE') {
+                $(selector).bt(data.text, {
+                  trigger: 'hover',
+                  positions: 'top',
+                  fill: '#F7F7F7',
+                  padding: 8,
+                  strokeStyle: '#B7B7B7',
+                  cornerRadius: 0,
+                  // cssStyles: {
+                  //   fontFamily: 'lucida grande",tahoma,verdana,arial,sans-serif',
+                  //   fontSize: '12px',
+                  // },
+                });
+              };
+            }
+          });
+
       });
     }
   };
-
 })(jQuery);

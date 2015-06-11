@@ -21,7 +21,7 @@ function carite_preprocess_views_view_table(&$vars) {
                 $uid = _get_last_user_from_node($nid);
                 if ($user->uid != $uid && $cnt > 1) {
                     $vars['row_classes'][$k][] = "edited_by_other";
-                    drupal_add_js(drupal_get_path('module', 'carite_common') . '/js/carite_common.js', 'file');
+                    $vars['row_classes'][$k][] = $row->nid;
                 }
             }
         }

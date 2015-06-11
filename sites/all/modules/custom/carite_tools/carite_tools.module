@@ -12,6 +12,12 @@ function carite_tools_menu() {
       'access arguments' => array('access administration pages'),
       'file' => 'carite_tools.admin.inc',
     );
+    $items['carite-get-popup'] = array(
+      'description' => t('This returns the text and uid of the node edited.'),
+      'page callback' => 'carite_tools_get_popup_content',
+      'access callback' => TRUE,
+      'type' => MENU_CALLBACK,
+    );
     return $items;
 }
 
@@ -55,7 +61,7 @@ function carite_tools_create_stipulation($deal_node) {
         }
     }
     catch (Exception $e) {
-        
+
     }
 }
 
@@ -63,7 +69,7 @@ function carite_tools_create_stipulation($deal_node) {
  * Implements hook_form_alter().
  */
 function carite_tools_form_alter(&$form, &$form_state, $form_id) {
-    
+
 }
 
 /**
@@ -110,3 +116,40 @@ function _get_deal_stipulations_status($deal_id) {
     }
 }
 
+/**
+ *
+ */
+function carite_tools_get_popup_content() {
+  $query = drupal_get_query_parameters();
+  if (isset($query['nid'])) {
+    $uid = _get_last_user_from_node($query['nid']);
+    $name = carite_tools_get_user_details($uid, 'name');
+    $status = array(
+      'status' => 'TRUE',
+      'text' => t('This deal is being edited by :name', array(':name' => $name)),
+    );
+  }
+  else {
+   $status = array(
+     'status' => 'FALSE',
+   );
+  }
+  print drupal_json_encode($status);
+  exit;
+}
+
+/**
+ * @desc Get username or email-id
+ * @param $uid
+ */
+function carite_tools_get_user_details($uid = 0, $get_type = 'mail') {
+  if ($uid != 0) {
+    try {
+      $query = db_select('users', 'u')
+        ->fields('u', array($get_type))
+        ->condition('uid', $uid);
+      $result = $query->execute()->fetchField();
+      return $result;
+    } catch (Exception $e) {}
+  }
+}
