@@ -88,25 +88,30 @@ function stipulation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_states'
-  $field_bases['field_states'] = array(
+  // Exported field_base: 'field_states_stip'
+  $field_bases['field_states_stip'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_states',
+    'field_name' => 'field_states_stip',
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'taxonomy',
     'settings' => array(
-      'max_length' => 255,
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'states',
+          'parent' => 0,
+        ),
+      ),
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_status'

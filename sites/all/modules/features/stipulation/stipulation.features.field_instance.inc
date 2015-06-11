@@ -203,41 +203,42 @@ function stipulation_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-stipulation-field_states'
-  $field_instances['taxonomy_term-stipulation-field_states'] = array(
+  // Exported field_instance: 'taxonomy_term-stipulation-field_states_stip'
+  $field_instances['taxonomy_term-stipulation-field_states_stip'] = array(
     'bundle' => 'stipulation',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 116,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_states',
-    'label' => 'States',
-    'required' => 0,
+    'field_name' => 'field_states_stip',
+    'label' => 'State',
+    'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -275,7 +276,7 @@ function stipulation_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -284,7 +285,7 @@ function stipulation_field_default_field_instances() {
   t('Refer Deal');
   t('Refer Stipulation');
   t('Rule');
-  t('States');
+  t('State');
   t('Status');
   t('Stipulation Description');
   t('Stipulation Status');
