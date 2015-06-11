@@ -62,7 +62,7 @@
       $(selector).once('custom-tooltip', function() {
 
           var classes = $(selector).attr('class').split(' ');
-          var index = ($(selector).hasClass('views-row-last') || $(selector).hasClass('views-row-last')) ? 3 : 2;
+          var index = ($(selector).hasClass('views-row-last') || $(selector).hasClass('views-row-first')) ? 3 : 2;
           $.ajax({
             type: "GET",
             url: Drupal.settings.basePath + "carite-get-popup",
