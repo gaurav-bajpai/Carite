@@ -60,33 +60,20 @@
     attach: function (context, settings) {
       var selector = '#block-carite-deal-summary-carite-deal-summary tr.edited_by_other';
       $(selector).once('custom-tooltip', function() {
-
-          var classes = $(selector).attr('class').split(' ');
-          var index = ($(selector).hasClass('views-row-last') || $(selector).hasClass('views-row-first')) ? 3 : 2;
-          $.ajax({
-            type: "GET",
-            url: Drupal.settings.basePath + "carite-get-popup",
-            cache: false,
-            data: {'nid' : classes[index]},
-            dataType : 'json',
-            success: function(data) {
-              if (data.status == 'TRUE') {
-                $(selector).bt(data.text, {
-                  trigger: 'hover',
-                  positions: 'top',
-                  fill: '#F7F7F7',
-                  padding: 8,
-                  strokeStyle: '#B7B7B7',
-                  cornerRadius: 0,
-                  // cssStyles: {
-                  //   fontFamily: 'lucida grande",tahoma,verdana,arial,sans-serif',
-                  //   fontSize: '12px',
-                  // },
-                });
-              };
-            }
+          var classes = $(this).attr('class').split(' ');
+          $(this).bt({
+            trigger: 'hover',
+            positions: 'top',
+            fill: '#F7F7F7',
+            padding: 8,
+            strokeStyle: '#B7B7B7',
+            cornerRadius: 0,
+            ajaxPath: Drupal.settings.basePath + "carite-get-popup/" + classes[0],
+            // cssStyles: {
+            //   fontFamily: 'lucida grande",tahoma,verdana,arial,sans-serif',
+            //   fontSize: '12px',
+            // },
           });
-
       });
     }
   };

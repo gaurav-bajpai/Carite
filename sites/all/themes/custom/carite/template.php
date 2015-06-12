@@ -20,8 +20,13 @@ function carite_preprocess_views_view_table(&$vars) {
                 $cnt = _get_last_user_from_node($nid, TRUE);
                 $uid = _get_last_user_from_node($nid);
                 if ($user->uid != $uid && $cnt > 1) {
-                    $vars['row_classes'][$k][] = "edited_by_other";
-                    $vars['row_classes'][$k][] = $row->nid;
+                    $classes = $vars['row_classes'][$k];
+                    unset($vars['row_classes'][$k]);
+                    $vars['row_classes'][$k][0] = $row->nid;
+                    $vars['row_classes'][$k][1] = "edited_by_other";
+                    foreach ($classes as $c_key => $c_value) {
+                      $vars['row_classes'][$k][] = $c_value;
+                    }
                 }
             }
         }
